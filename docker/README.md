@@ -42,8 +42,8 @@ sudo systemctl restart docker
 
 Clone the workshop repository to your home folder.
 ```
-cd ~
-git clone --recurse-submodules <repo_url> iros2026_workshop
+cd /path/to/desired/directory
+git clone --recurse-submodules git@github.com:Yuxin916/CMU-VLN-Challenge-2026.git && cd ./CMU-VLN-Challenge-2026
 ```
 Allow remote X connection.
 ```

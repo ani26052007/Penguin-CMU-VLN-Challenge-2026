@@ -179,7 +179,6 @@ For each scene, 5 questions similar to those provided will be tested and a score
 
 The scores from all questions across the 3 test scenes will be totaled for each team's final score. 
 
-Note: Teams have a choice whether to use the ground-truth semantics posted on the /object_markers topic in their final submission. Methods that do not use the published ground-truth semantics will be scored differently.
 
 ### Timing
 
@@ -209,11 +208,11 @@ Any questions regarding the challenge can be asked by opening a Github issue wit
    
    All submissions will first be evaluated in simulation first. Valid submissions will then be evaluated on the real-robot system and teams will be invited to schedule a timeslot and connect remotely to assist with the integration and evaluation.
 
-6. Will ground-truth semantics be provided in the real-robot evaluation?
+6. Will ground-truth semantics be provided in the simulation and real-robot evaluation?
 
-   Yes, ground-truth semantics will be provided in the real-world scene as well. Participants have a choice whether to use ground-truth semantics in their final submission or not and indicate this in the submission form. Methods that use it vs. methods that do not will be scored differently.
+   No, we are sorry that this year we will not provide ground-truth semantics in both phases.
 
-8. How will presentation at the IROS workshop work?
+7. How will presentation at the IROS workshop work?
 
    All evaluation will be conducted prior to the IROS conference. The top 3 teams will be contacted with the opportunity to present their method either in-person or remotely.
 

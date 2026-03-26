@@ -1,4 +1,4 @@
-# CMU-VLA-Challenge
+# CMU-VLN-Challenge
 
 ## Table of Contents
 [Introduction](#introduction)  

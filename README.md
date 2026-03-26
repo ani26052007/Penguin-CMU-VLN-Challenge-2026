@@ -182,9 +182,9 @@ Evaluation is performed by a `challenge_evaluation_node` whose source code is no
 ### Question Types and Initial Scoring
 
 For each scene, 5 questions similar to those provided will be tested and a score will be given to each response. The question types will be scored as follows:
-- **Numerical** (/1): Exact number must be published on `/numerical_response` as an `std_msgs/Int32` message. Score of 0 or 1.
-- **Object Reference** (/2): ROS `visualization_msgs/Marker` message must be published on `/selected_object_marker`, and is scored based on its degree of overlap with the ground truth object bounding box. Score between 0 and 2.
-- **Instruction-Following** (/6): A series of `geometry_msgs/Pose2D` waypoints must be published on `/way_point_with_heading` to guide the vehicle. The score will be calculated based on the actual trajectory followed by the robot based on whether it follows the path constraints in the command and in the correct order. Penalties are imposed upon the score if the followed path deviates from the correct order of constraints, does not achieve the desired constraints, or passes through areas it is forbidden to go through in the command. Score between 0 and 6, with possibility for partial points. 
+- **Numerical** (/1): Exact number must be published on `/numerical_response` as an `std_msgs/msg/Int32` message. Score of 0 or 1.
+- **Object Reference** (/2): ROS `visualization_msgs/msg/Marker` message must be published on `/selected_object_marker`, and is scored based on its degree of overlap with the ground truth object bounding box. Score between 0 and 2.
+- **Instruction-Following** (/6): A series of `geometry_msgs/msg/Pose2D` waypoints must be published on `/way_point_with_heading` to guide the vehicle. The score will be calculated based on the actual trajectory followed by the robot based on whether it follows the path constraints in the command and in the correct order. Penalties are imposed upon the score if the followed path deviates from the correct order of constraints, does not achieve the desired constraints, or passes through areas it is forbidden to go through in the command. Score between 0 and 6, with possibility for partial points. 
 
 The scores from all questions across the 3 test scenes will be totaled for each team's final score. 
 

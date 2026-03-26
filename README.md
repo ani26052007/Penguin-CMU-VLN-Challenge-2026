@@ -196,7 +196,7 @@ For each question, both re-exploration on system launch and question answering w
 
 
 ## Challenge FAQ
-Any questions regarding the challenge can be asked by opening a Github issue with the "question" label. We encourage you to use this feature so that multiple members of the team can see the question. Questions specific to your team situation can be emailed to haochen4@andrew.cmu.edu or other challenge organizers. Frequently asked questions will be posted here.
+Any questions regarding the challenge can be asked by opening a Github issue with the "question" label. We encourage you to use this feature so that multiple members of the team can see the question. Questions specific to your team situation can be emailed to jingfant@andrew.cmu.edu or other challenge organizers. Frequently asked questions will be posted here.
 
 1. Are multiple submissions allowed?
 

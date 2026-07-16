@@ -1,0 +1,13 @@
+These are core things of the challenge:
+  1. ***Active exploration under partial observability:***
+    The environment is initially unknown — the reasoning module has to decide where to look before it even knows what's in the scene. This is a next-best-view / frontier-exploration problem: how do you allocate a limited number of waypoint moves to gather enough visual evidence to answer a query, without exhaustively mapping the whole scene? That's closer to active SLAM / active perception literature than to anything a VLM does on a single image.
+  2. ***Object permanence and re-identification across viewpoints:***
+    Numerical questions ("how many blue chairs are between the table and the wall") require dedup­lication of detections seen from multiple angles. If your object grounding module sees the same chair twice from two viewpoints and doesn't realize it's the same instance, you overcount. This is a classic data-association problem — the semantic analogue of loop closure — and it's arguably the single biggest source of silent errors in these challenges, not language understanding.
+  3. ***Incremental 3D scene graph construction:***
+    Turning noisy point-cloud + image streams into a consistent set of object nodes with stable positions and semantic labels, updated as you explore, is a mapping/fusion problem (open-vocab 3D detection, multi-view fusion, spatial relation extraction) more than a VLM problem. The VLA-3D dataset backing this (scene graphs + 9M language statements) exists precisely because this fusion step is hard and needs supervision.
+  4. ***Grounding relational language onto imperfect geometry:****
+    "Between," "near," "closest to" are trivial to parse linguistically but require the geometric scene graph to actually be accurate — if your point cloud segmentation is noisy or an object's centroid estimate is off, the correct referent changes. So language grounding failures downstream are very often actually perception/mapping failures upstream, which is exactly your intuition.
+  5. ***Deciding when to stop exploring:***
+    There's an exploration/exploitation tradeoff baked in: keep exploring for more confidence vs. commit to an answer/waypoint. Terminating too early gives wrong answers; exploring too long wastes budget or time in the real-robot phase.
+  6. ***Sim-to-real generalization:***
+    The 2026 challenge is Unity sim first, then moves to real LiDAR/360-camera data on unseen office environments. Point cloud noise, lighting, and sensor calibration differences mean a pipeline tuned on clean simulated data can fall apart on real sensor data — a classic sim-to-real gap that has nothing to do with language reasoning.
